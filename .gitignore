@@ -1,5 +1,12 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+notas.md 
+.env
+src/environments/environment.ts
+src/app/maps/components
+
+
+
 # Compiled output
 /dist
 /tmp
