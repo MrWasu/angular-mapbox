@@ -6,7 +6,7 @@ import { Map, Marker } from 'mapbox-gl';
   templateUrl: './minimap.component.html',
   styleUrls: ['./minimap.component.css']
 })
-export class MinimapComponent { //! apuntes 6 junto con cards page
+export class MinimapComponent {
 
   @Input() lngLat?: [number, number];
   @ViewChild('map') divMap?: ElementRef;

@@ -8,15 +8,14 @@ import { LngLat, Map } from 'mapbox-gl';
   templateUrl: './zoom-page.component.html',
   styleUrls: ['./zoom-page.component.css']
 })
-export class ZoomPageComponent implements AfterViewInit, OnDestroy { //!apuntes 4 junto con mapbox
-
+export class ZoomPageComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('map') divMap?: ElementRef;
 
   public zoom: number = 10;
   public map?: Map;
   // posicion por defecto:
-  public currentLngLat: LngLat = new LngLat(-4.779357455292853, 37.88582266939652); //! cambiar
+  public currentLngLat: LngLat = new LngLat(-4.779357455292853, 37.88582266939652); // cambiar por ubicación navegador?
 
 
   ngAfterViewInit(): void {
@@ -53,7 +52,6 @@ export class ZoomPageComponent implements AfterViewInit, OnDestroy { //!apuntes 
     this.map.on('move', () => {
       this.currentLngLat = this.map!.getCenter();
     });
-
   }
 
   zoomIn() {

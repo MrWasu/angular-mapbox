@@ -1,5 +1,3 @@
-//! apuntes 1 junto con el script del json
-
 const { writeFileSync, mkdirSync } = require('fs');
 
 require('dotenv').config();

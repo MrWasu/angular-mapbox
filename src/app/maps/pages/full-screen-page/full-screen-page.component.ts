@@ -15,7 +15,7 @@ export class FullScreenPageComponent implements AfterViewInit {
 
     if ( !this.divMap ) throw 'El elemento HTML no fue encontrado';
 
-    const map = new Map({ //!apuntes 2 y su incluison en maps.module
+    const map = new Map({ 
       container: this.divMap.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: [-74.5, 40], // starting position [lng, lat]

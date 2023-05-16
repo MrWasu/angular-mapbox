@@ -92,7 +92,7 @@ export class MarkersPageComponent {
     const plainMarkers: PlainMarker[] = this.markers.map( ({ color, marker }) => {
       return {
         color,
-        lngLat: marker.getLngLat().toArray() //! apuntes 5
+        lngLat: marker.getLngLat().toArray() // toArray es propio de Mapbox
       }
     });
 
