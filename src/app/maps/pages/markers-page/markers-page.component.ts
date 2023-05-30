@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Map, LngLat, Marker } from 'mapbox-gl';
+import { GeoLocationService } from '../../services/geo-location.service';
 
 interface MarkerAndColor {
   color: string;
@@ -20,11 +21,12 @@ export class MarkersPageComponent {
 
   @ViewChild('map') divMap?: ElementRef;
 
+  constructor(private geoLocationService: GeoLocationService) {}
+
   public markers: MarkerAndColor[] = [];
 
-
   public map?: Map;
-  public currentLngLat: LngLat = new LngLat(-4.779357455292853, 37.88582266939652)
+  public defaultLocation: LngLat = new LngLat(-4.779357455292853, 37.88582266939652)
 
   ngAfterViewInit(): void {
 
@@ -33,7 +35,7 @@ export class MarkersPageComponent {
     this.map = new Map({
       container: this.divMap.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v12', // style URL
-      center: this.currentLngLat,
+      center: this.defaultLocation,
       zoom: 13
     });
 
